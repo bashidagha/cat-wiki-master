@@ -1,13 +1,8 @@
 import Head from "next/head";
-import { useContext, useState } from "react";
-import UploadImage from "../components/UploadImage";
-import Uploading from "../components/Uploading";
-import uiContext from "../store/ui-context";
-import styles from "../styles/Home.module.css";
+import LogoContainer from "../components/LogoContainer";
+import styles from "../styles/pages/Home.module.css";
 
 export default function Home() {
-  const ctx = useContext(uiContext);
-
   return (
     <>
       <Head>
@@ -16,13 +11,45 @@ export default function Home() {
         <link rel="icon" href="/devchallenges.png" />
       </Head>
 
-      <div className={styles.container}>
-        <UploadImage />
+      <div className="container">
+        <img src="/CatwikiLogo.svg" alt="logo" className="logo"></img>
 
-        <div className="footer__owner">
-          created by <a href="https://github.com/bashidagha">bashidagha</a> -
-          devChallenges.io
-        </div>
+        <section className={styles.home__adapt}>
+          <div className={styles.home__adapt__info}>
+            <hr></hr>
+            <h2>Why should you have a cat?</h2>
+            <p>
+              Having a cat around you can actually trigger the release of
+              calming chemicals in your body which lower your stress and anxiety
+              leves
+            </p>
+            <a>
+              READ MORE <span>&#8594; </span>{" "}
+            </a>
+          </div>
+
+          <div className={styles.home__gallery}>
+            <div>
+              <img src="/image 2.png" alt="image"></img>
+
+              <img src="/image 1.png" alt="image"></img>
+            </div>
+            <img
+              src="/image 3.png"
+              alt="image"
+              className={styles.home__gallery__single}
+            ></img>
+          </div>
+        </section>
+
+        <footer>
+          <LogoContainer />
+          <p>
+            <span>&copy; </span>created by{" "}
+            <a href="https://my-portfilio-beta.vercel.app/">bashidagha</a> -
+            devChallenge.io 2021
+          </p>
+        </footer>
       </div>
     </>
   );

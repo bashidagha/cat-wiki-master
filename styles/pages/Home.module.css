@@ -1,0 +1,66 @@
+.home__adapt h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  margin-top: 1rem;
+}
+
+.home__adapt {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.home__adapt hr {
+  height: 0.3rem;
+  border-radius: 77px;
+  background-color: var(---color-text);
+  width: 8rem;
+  margin-left: 0;
+}
+
+.home__adapt a {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(41, 21, 7, 0.6);
+}
+
+.home__adapt a span {
+  font-size: 3rem;
+}
+
+.home__adapt__info {
+  margin-bottom: 3rem;
+  max-width: 33rem;
+}
+
+.home__gallery {
+  display: flex;
+  gap: 1rem;
+  max-width: 40rem;
+}
+
+.home__gallery__single {
+  width: 45%;
+  align-self: flex-start;
+}
+
+.home__gallery div {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .home__adapt {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .home__adapt__info {
+    max-width: 40rem;
+  }
+}
