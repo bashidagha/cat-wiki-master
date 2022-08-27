@@ -31,6 +31,15 @@ export default function Home() {
               </svg>
             </form>
           </div>
+
+          <div className={styles.home__hero__mostsearch}>
+
+            <p>Most Searched Breeds</p>
+            <hr></hr>
+            <h4>66+ Breeds For you to discover</h4>
+          </div>
+
+
         </section>
 
         <HomeAdapt />

@@ -34,7 +34,7 @@
   min-width: 13rem;
 }
 
-.home__hero__search form svg{
+.home__hero__search form svg {
   width: 2rem;
   height: 2rem;
   position: absolute;
@@ -42,8 +42,64 @@
   top: -0.4rem;
 }
 
-.home__hero__search form svg path{
+.home__hero__search form svg path {
   fill: black;
 }
 
+.home__hero__mostsearch {
+  background: #e3e1dc;
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  padding: 2rem 3rem;
+}
 
+.home__hero__mostsearch p {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.home__hero__mostsearch hr {
+  background: #4d270c;
+  border-radius: 77px;
+  height: 0.3rem;
+  max-width: 5rem;
+  margin-left: 0;
+}
+
+.home__hero__mostsearch h4 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 20rem;
+}
+
+
+@media (min-width:700px){
+  .home__hero__search {
+    padding: 10% 10% 20% 10%;
+  }
+
+  .home__hero__search p {
+    font-size: 24px;
+    line-height: 29px;
+    max-width: 40rem;
+
+  }
+
+  .home__hero__search form input {
+    border-radius: 59px;
+    padding: 2.3rem 2.8rem;
+    width: 35%;
+    min-width: 13rem;
+    font-size: 1.8rem;
+  }
+  
+  .home__hero__search form svg {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    right: 1.2rem;
+    top: -1.2rem;
+  }
+}
