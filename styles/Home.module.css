@@ -1,0 +1,213 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  width: 95%;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.upload {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.upload h3 {
+  font-size: 18px;
+  line-height: 27px;
+  color: #4f4f4f;
+  margin-top: 0;
+}
+
+.upload p:nth-child(2) {
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: #828282;
+}
+
+.upload p:nth-child(3) {
+  font-size: 12px;
+  line-height: 18px;
+  color: #bdbdbd;
+}
+
+.upload button {
+  background: #2f80ed;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  color: white;
+  padding: 0.8rem 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.upload input {
+  display: none;
+}
+
+.upload__drag {
+  width: 100%;
+  padding: 2rem 0;
+  background: #f6f8fb;
+  border: 1px dashed #97bef4;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.upload__drag div {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.035em;
+  color: #bdbdbd;
+  margin-top: 2rem;
+}
+
+.active {
+  border: 3px solid #97bef4;
+}
+
+.uploading {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+}
+
+.uploading h3 {
+  font-size: 18px;
+  line-height: 27px;
+  color: #4f4f4f;
+  margin-top: 0;
+}
+
+.progress {
+  width: 100%;
+  height: 0.6rem;
+  background: #f2f2f2;
+  border-radius: 8px;
+  position: relative;
+}
+
+@keyframes progress_anim {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 10%;
+  }
+
+  40% {
+    left: 30%;
+  }
+
+  60% {
+    left: 60%;
+  }
+
+  80% {
+    left: 70%;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.progress div {
+  width: 30%;
+  background: #2f80ed;
+  border-radius: 8px;
+  height: 0.6rem;
+
+  position: absolute;
+  animation-name: progress_anim;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.loaded {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.loaded h3 {
+  font-size: 18px;
+  line-height: 27px;
+  color: #4f4f4f;
+  margin-top: 2rem;
+}
+
+.loaded img {
+  border-radius: 12px;
+  max-height: 22.4rem;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.loaded svg {
+  fill: white;
+  border-radius: 50%;
+  background: #219653;
+}
+
+.loaded__link {
+  background: #f6f8fb;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.2rem;
+  font-size: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  line-height: 12px;
+  letter-spacing: -0.035em;
+  color: #4f4f4f;
+  align-items: center;
+  width: 100%;
+}
+
+.loaded__link button {
+  background: #2f80ed;
+  border-radius: 8px;
+  font-size: 8px;
+  line-height: 12px;
+  text-align: center;
+  border: none;
+  white-space: nowrap;
+  outline: none;
+  display: block;
+  padding: 0.9rem 2rem;
+  color: #ffffff;
+}
+
+.loaded__link p {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  width: 70%;
+}
+
+@media (min-width: 600px) {
+  .upload,
+  .uploading,
+  .loaded {
+    padding: 2.5rem;
+  }
+}
