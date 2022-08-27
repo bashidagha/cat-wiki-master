@@ -1,5 +1,7 @@
 import Head from "next/head";
-import LogoContainer from "../components/LogoContainer";
+import Layout from "../components/Layout/Layout";
+import HomeAdapt from "../components/UI/HomeAdapt";
+import LogoContainer from "../components/UI/LogoContainer";
 import styles from "../styles/pages/Home.module.css";
 
 export default function Home() {
@@ -11,46 +13,28 @@ export default function Home() {
         <link rel="icon" href="/devchallenges.png" />
       </Head>
 
-      <div className="container">
-        <img src="/CatwikiLogo.svg" alt="logo" className="logo"></img>
+      <Layout>
+        <section className={styles.home__hero}>
+          <div className={styles.home__hero__search}>
+            <LogoContainer />
 
-        <section className={styles.home__adapt}>
-          <div className={styles.home__adapt__info}>
-            <hr></hr>
-            <h2>Why should you have a cat?</h2>
-            <p>
-              Having a cat around you can actually trigger the release of
-              calming chemicals in your body which lower your stress and anxiety
-              leves
-            </p>
-            <a>
-              READ MORE <span>&#8594; </span>{" "}
-            </a>
-          </div>
-
-          <div className={styles.home__gallery}>
-            <div>
-              <img src="/image 2.png" alt="image"></img>
-
-              <img src="/image 1.png" alt="image"></img>
-            </div>
-            <img
-              src="/image 3.png"
-              alt="image"
-              className={styles.home__gallery__single}
-            ></img>
+            <p>Get to know more about your cat breed</p>
+            <form>
+              <input type="text" placeholder="Search"></input>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="48"
+                width="48"
+                viewBox="0 0 48 48"
+              >
+                <path d="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z" />
+              </svg>
+            </form>
           </div>
         </section>
 
-        <footer>
-          <LogoContainer />
-          <p>
-            <span>&copy; </span>created by{" "}
-            <a href="https://my-portfilio-beta.vercel.app/">bashidagha</a> -
-            devChallenge.io 2021
-          </p>
-        </footer>
-      </div>
+        <HomeAdapt />
+      </Layout>
     </>
   );
 }

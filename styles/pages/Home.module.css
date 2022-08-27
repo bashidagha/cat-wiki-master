@@ -1,66 +1,49 @@
-.home__adapt h2 {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 49px;
-  margin-top: 1rem;
+.home__hero {
+  border-radius: 3rem;
 }
 
-.home__adapt {
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+.home__hero__search {
+  background-image: url("/HeroImagesm.png");
+  padding: 2rem 3rem;
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.home__adapt hr {
-  height: 0.3rem;
-  border-radius: 77px;
-  background-color: var(---color-text);
-  width: 8rem;
-  margin-left: 0;
+.home__hero__search svg path {
+  fill: white;
 }
 
-.home__adapt a {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  color: rgba(41, 21, 7, 0.6);
+.home__hero__search p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+  max-width: 20rem;
 }
 
-.home__adapt a span {
-  font-size: 3rem;
+.home__hero__search form {
+  position: relative;
+  display: inline;
 }
 
-.home__adapt__info {
-  margin-bottom: 3rem;
-  max-width: 33rem;
+.home__hero__search form input {
+  border-radius: 59px;
+  padding: 0.7rem 1.3rem;
+  width: 25%;
+  min-width: 13rem;
 }
 
-.home__gallery {
-  display: flex;
-  gap: 1rem;
-  max-width: 40rem;
+.home__hero__search form svg{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: -0.4rem;
 }
 
-.home__gallery__single {
-  width: 45%;
-  align-self: flex-start;
+.home__hero__search form svg path{
+  fill: black;
 }
 
-.home__gallery div {
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 
-@media (min-width: 700px) {
-  .home__adapt {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .home__adapt__info {
-    max-width: 40rem;
-  }
-}
