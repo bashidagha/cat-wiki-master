@@ -60,6 +60,16 @@ const Cats = (props) => {
             </table>
           </div>
         </section>
+
+        <div className={styles.catOtherPhoto}>
+          <h3>Other photos</h3>
+
+          <div>
+            {props.OtherPhotos.map((photo) => (
+              <img src={photo.url} alt={catInfo.name} key={photo.id}></img>
+            ))}
+          </div>
+        </div>
       </Layout>
     </>
   );
@@ -81,6 +91,7 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps(context) {
+  //fetch breeds
   const res = await fetch(`https://api.thecatapi.com/v1/breeds`);
   const posts = await res.json();
 
@@ -88,8 +99,14 @@ export async function getStaticProps(context) {
 
   const post = posts.filter((post) => post.name === catName);
 
+  //fetch breed other photos
+  const resOtherPhotos = await fetch(
+    `https://api.thecatapi.com/v1/images/search?breed_ids=${post[0].id}&limit=8`
+  );
+  const OtherPhotos = await resOtherPhotos.json();
+
   // Pass post data to the page via props
-  return { props: { post } };
+  return { props: { post, OtherPhotos } };
 }
 
 export default Cats;
