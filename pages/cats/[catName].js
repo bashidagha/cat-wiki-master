@@ -7,6 +7,7 @@ import Rating from "../../components/UI/Rating";
 const Cats = (props) => {
   const catInfo = props.post[0];
 
+
   return (
     <>
       <Head>
@@ -18,7 +19,7 @@ const Cats = (props) => {
       <Layout>
         <section className={styles.catInfo}>
           <img
-            src={catInfo.image.url}
+            src={catInfo.image?catInfo.image.url:props.OtherPhotos[0].url}
             alt={catInfo.name}
             className={styles.mainCatImage}
           ></img>
