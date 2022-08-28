@@ -18,12 +18,22 @@ const Rating = (props) => {
 
       <th>
         {fill.length > 0 &&
-          fill.map((f) => {
-            return <div className={styles.catRateItem__fill}></div>;
+          fill.map((f, index) => {
+            return (
+              <div
+                className={styles.catRateItem__fill}
+                key={`fill${index}`}
+              ></div>
+            );
           })}
         {empty.length > 0 &&
-          empty.map((f) => {
-            return <div className={styles.catRateItem__empty}></div>;
+          empty.map((f, index) => {
+            return (
+              <div
+                className={styles.catRateItem__empty}
+                key={`empty${index}`}
+              ></div>
+            );
           })}
       </th>
     </tr>
