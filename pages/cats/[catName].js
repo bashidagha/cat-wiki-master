@@ -23,7 +23,7 @@ const Cats = (props) => {
             className={styles.mainCatImage}
           ></img>
 
-          <div>
+          <div className={styles.catInfo__desc}>
             <h1>{catInfo.name}</h1>
             <p>{catInfo.description}</p>
 
