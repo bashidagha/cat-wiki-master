@@ -1,10 +1,14 @@
+import Link from "next/link";
 import React from "react";
 import LogoContainer from "../UI/LogoContainer";
 
 const Layout = (props) => {
+
   return (
     <div className="container">
-      <img src="/CatwikiLogo.svg" alt="logo" className="logo"></img>
+      <Link href="/">
+        <img src="/CatwikiLogo.svg" alt="logo" className="logo"></img>
+      </Link>
 
       {props.children}
 
