@@ -1,0 +1,40 @@
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 5rem;
+}
+
+.most__catItem {
+  margin-bottom: 5rem;
+}
+
+.most__catItem h3 {
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 0.2rem;
+  line-height: 44px;
+  margin-bottom: 1rem;
+}
+.most__catItem p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.most__catItem img {
+  width: 17rem;
+  height: 17rem;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+@media(min-width:700px){
+    .most__catItem{
+        display: flex;
+        gap: 4rem;
+    }
+
+    .most__catItem img{
+        flex-shrink: 0;
+    }
+}
