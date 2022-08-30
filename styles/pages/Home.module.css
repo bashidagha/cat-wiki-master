@@ -74,12 +74,36 @@
   max-width: 20rem;
 }
 
+.home__hero__mostsearch__container_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
 
-@media (min-width:700px){
+.home__hero__mostsearch__item {
+  width: 44%;
+}
+
+.home__hero__mostsearch__item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.home__hero__mostsearch__item p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0.3rem 0 1.5rem 0;
+}
+
+@media (min-width: 700px) {
   .home__hero__search {
     padding: 8% 0 10% 5%;
     background-image: url("/HeroImagemd.png");
-
   }
 
   .home__hero__search svg path {
@@ -91,7 +115,6 @@
     font-size: 24px;
     line-height: 29px;
     max-width: 40rem;
-
   }
 
   .home__hero__search form input {
@@ -101,7 +124,7 @@
     min-width: 13rem;
     font-size: 1.8rem;
   }
-  
+
   .home__hero__search form svg {
     width: 4rem;
     height: 4rem;
@@ -109,12 +132,14 @@
     right: 1.2rem;
     top: -1.2rem;
   }
+
+  .home__hero__mostsearch__item {
+    width: 22%;
+  }
 }
 
-
-@media (min-width:1300px){
+@media (min-width: 1300px) {
   .home__hero__search {
     background-image: url("/HeroImagelg.png");
-
   }
 }

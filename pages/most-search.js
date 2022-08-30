@@ -18,7 +18,7 @@ const MostSearchedCats = (props) => {
         <h1 className={styles.title}>Top 10 most searched breeds</h1>
 
         {props.cats &&
-          Object.values(props.cats).map((cat, index) => (
+          props.cats.map((cat, index) => (
             <div className={styles.most__catItem}>
               <img src={cat.image} alt={cat.name}></img>
               <div>
@@ -42,7 +42,10 @@ export async function getStaticProps(context) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         // console.log(snapshot.val());
-        return snapshot.val();
+
+        const convertObjectToArray = Object.values(snapshot.val());
+
+        return convertObjectToArray;
       } else {
         console.log("No most searched cats available");
         return null;

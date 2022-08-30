@@ -1,10 +1,14 @@
+import { child, get, ref } from "firebase/database";
 import Head from "next/head";
 import Layout from "../components/Layout/Layout";
 import HomeAdapt from "../components/UI/HomeAdapt";
 import LogoContainer from "../components/UI/LogoContainer";
+import { database } from "../helper/uploadHelper";
 import styles from "../styles/pages/Home.module.css";
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.cats);
+
   return (
     <>
       <Head>
@@ -33,17 +37,51 @@ export default function Home() {
           </div>
 
           <div className={styles.home__hero__mostsearch}>
-
             <p>Most Searched Breeds</p>
             <hr></hr>
             <h4>66+ Breeds For you to discover</h4>
+            <a>
+              SEA MORE <span>&#8594; </span>{" "}
+            </a>
+
+            <div className={styles.home__hero__mostsearch__container_items}>
+              {props.cats.map((cat) => (
+                <div className={styles.home__hero__mostsearch__item}>
+                  <img src={cat.image} alt={cat.name}></img>
+                  <p>{cat.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
-
-
         </section>
 
         <HomeAdapt />
       </Layout>
     </>
   );
+}
+
+// This also gets called at build time
+export async function getStaticProps(context) {
+  const dbRef = ref(database);
+
+  const p = await get(child(dbRef, `cats/`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const convertObjectToArray = Object.values(snapshot.val()).slice(0, 4);
+
+        return convertObjectToArray;
+
+        return snapshot.val();
+      } else {
+        console.log("No most searched cats available");
+        return null;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  // Pass post data to the page via props
+  return { props: { cats: p } };
 }
