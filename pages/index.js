@@ -1,5 +1,6 @@
 import { child, get, ref } from "firebase/database";
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/Layout/Layout";
 import HomeAdapt from "../components/UI/HomeAdapt";
 import LogoContainer from "../components/UI/LogoContainer";
@@ -39,17 +40,23 @@ export default function Home(props) {
           <div className={styles.home__hero__mostsearch}>
             <p>Most Searched Breeds</p>
             <hr></hr>
-            <h4>66+ Breeds For you to discover</h4>
-            <a>
-              SEA MORE <span>&#8594; </span>{" "}
-            </a>
+            <div className={styles.home__hero__mostsearch_title}>
+              <h4>66+ Breeds For you to discover</h4>
+              <Link href="/most-search">
+                <a className={styles.home__hero__mostsearch_seemore}>
+                  SEA MORE <span>&#8594; </span>
+                </a>
+              </Link>
+            </div>
 
             <div className={styles.home__hero__mostsearch__container_items}>
               {props.cats.map((cat) => (
-                <div className={styles.home__hero__mostsearch__item}>
-                  <img src={cat.image} alt={cat.name}></img>
-                  <p>{cat.name}</p>
-                </div>
+                <Link href={`/cats/${cat.name}`}>
+                  <a className={styles.home__hero__mostsearch__item}>
+                    <img src={cat.image} alt={cat.name}></img>
+                    <p>{cat.name}</p>
+                  </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { child, get, ref } from "firebase/database";
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import { database } from "../helper/uploadHelper";
@@ -22,9 +23,14 @@ const MostSearchedCats = (props) => {
             <div className={styles.most__catItem}>
               <img src={cat.image} alt={cat.name}></img>
               <div>
-                <h3>
-                  {index + 1}. {cat.name}
-                </h3>
+                <Link href={`/cats/${cat.name}`}>
+                  <a>
+                    <h3>
+                      {index + 1}. {cat.name}
+                    </h3>
+                  </a>
+                </Link>
+
                 <p>{cat.description}</p>
               </div>
             </div>

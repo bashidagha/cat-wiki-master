@@ -1,5 +1,6 @@
 .home__hero {
   border-radius: 3rem;
+  margin-bottom: 3rem;
 }
 
 .home__hero__search {
@@ -69,9 +70,9 @@
 
 .home__hero__mostsearch h4 {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  max-width: 20rem;
+  font-size: 48px;
+  line-height: 59px;
+  margin: 1rem 0;
 }
 
 .home__hero__mostsearch__container_items {
@@ -100,6 +101,18 @@
   margin: 0.3rem 0 1.5rem 0;
 }
 
+.home__hero__mostsearch_seemore {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+  color: rgba(41, 21, 7, 0.6);
+}
+
+.home__hero__mostsearch_seemore span {
+  font-size: 25px;
+}
+
 @media (min-width: 700px) {
   .home__hero__search {
     padding: 8% 0 10% 5%;
@@ -109,6 +122,16 @@
   .home__hero__search svg path {
     width: 256px;
     height: 100px;
+  }
+
+  .home__hero__mostsearch h4 {
+    margin: 1rem 0 0 0;
+  }
+
+  .home__hero__mostsearch_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   .home__hero__search p {
@@ -123,6 +146,10 @@
     width: 35%;
     min-width: 13rem;
     font-size: 1.8rem;
+  }
+
+  .home__hero__mostsearch h4 {
+    max-width: 60%;
   }
 
   .home__hero__search form svg {

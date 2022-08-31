@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./homeadapt.module.css";
 
@@ -11,7 +12,8 @@ const HomeAdapt = () => {
           Having a cat around you can actually trigger the release of calming
           chemicals in your body which lower your stress and anxiety leves
         </p>
-        <a>
+
+        <a href="https://animalkind.org/blog/top-5-reasons-cat/">
           READ MORE <span>&#8594; </span>{" "}
         </a>
       </div>
