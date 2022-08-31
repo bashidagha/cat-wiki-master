@@ -1,6 +1,7 @@
 import { child, get, ref } from "firebase/database";
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import HomeAdapt from "../components/UI/HomeAdapt";
 import LogoContainer from "../components/UI/LogoContainer";
@@ -8,7 +9,37 @@ import { database } from "../helper/uploadHelper";
 import styles from "../styles/pages/Home.module.css";
 
 export default function Home(props) {
-  console.log(props.cats);
+  // console.log(props.cats);
+
+  const [catBreeds, setCatBreeds] = useState([]);
+  const [recomCats, setRecomCats] = useState([]);
+
+  useEffect(() => {
+    // declare the data fetching function
+    const fetchData = async () => {
+      //Don't need to run on the server
+      const res = await fetch(`https://api.thecatapi.com/v1/breeds`);
+      const cats = await res.json();
+      setCatBreeds(
+        cats.map((cat) => {
+          return cat.name;
+        })
+      );
+    };
+
+    // call the function
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);
+  }, []);
+
+  const searchCatsHandler = (e) => {
+    setRecomCats(
+      catBreeds.filter((cat) =>
+        String(cat).toLowerCase().includes(String(e.target.value).toLowerCase())
+      )
+    );
+  };
 
   return (
     <>
@@ -25,7 +56,11 @@ export default function Home(props) {
 
             <p>Get to know more about your cat breed</p>
             <form>
-              <input type="text" placeholder="Search"></input>
+              <input
+                type="text"
+                placeholder="Search"
+                onChange={searchCatsHandler}
+              ></input>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="48"
@@ -34,6 +69,15 @@ export default function Home(props) {
               >
                 <path d="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z" />
               </svg>
+
+              <div className={styles.home__hero__search_recom}>
+                {recomCats &&
+                  recomCats.map((cat, index) => (
+                    <Link href={`/cats/${cat}`} key={index + 1}>
+                      <a>{cat}</a>
+                    </Link>
+                  ))}
+              </div>
             </form>
           </div>
 
