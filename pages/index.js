@@ -34,11 +34,17 @@ export default function Home(props) {
   }, []);
 
   const searchCatsHandler = (e) => {
-    setRecomCats(
-      catBreeds.filter((cat) =>
-        String(cat).toLowerCase().includes(String(e.target.value).toLowerCase())
-      )
-    );
+    if (e.target.value === "") {
+      setRecomCats([]);
+    } else {
+      setRecomCats(
+        catBreeds.filter((cat) =>
+          String(cat)
+            .toLowerCase()
+            .includes(String(e.target.value).toLowerCase())
+        )
+      );
+    }
   };
 
   return (
@@ -55,7 +61,8 @@ export default function Home(props) {
             <LogoContainer />
 
             <p>Get to know more about your cat breed</p>
-            <form>
+
+            <div className={styles.search__input}>
               <input
                 type="text"
                 placeholder="Search"
@@ -78,7 +85,7 @@ export default function Home(props) {
                     </Link>
                   ))}
               </div>
-            </form>
+            </div>
           </div>
 
           <div className={styles.home__hero__mostsearch}>

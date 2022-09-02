@@ -23,27 +23,32 @@
   max-width: 20rem;
 }
 
-.home__hero__search form {
+
+.search__input{
+  width: 35%;
   position: relative;
-  display: inline;
 }
 
-.home__hero__search form input {
+.search__input input {
   border-radius: 59px;
   padding: 0.7rem 1.3rem;
-  width: 25%;
-  min-width: 13rem;
+  width: 100%;
 }
 
-.home__hero__search form svg {
+
+.search__input input:focus-visible{
+  outline: none;
+}
+
+.search__input svg {
   width: 2rem;
   height: 2rem;
   position: absolute;
-  right: 1rem;
-  top: -0.4rem;
+  right: 5%;
+  top: 0.6rem;
 }
 
-.home__hero__search form svg path {
+.search__input svg path {
   fill: black;
 }
 
@@ -54,7 +59,7 @@
   border-radius: 24px;
   width: 100%;
   position: absolute;
-  top: 4.2rem;
+  top: 7.5rem;
 }
 
 .home__hero__search_recom a {
@@ -179,24 +184,25 @@
     max-width: 40rem;
   }
 
-  .home__hero__search form input {
+
+  .search__input input {
     border-radius: 59px;
     padding: 2.3rem 2.8rem;
-    width: 35%;
     min-width: 13rem;
     font-size: 1.8rem;
   }
+
 
   .home__hero__mostsearch h4 {
     max-width: 60%;
   }
 
-  .home__hero__search form svg {
+  .search__input svg {
     width: 4rem;
     height: 4rem;
     position: absolute;
-    right: 1.2rem;
-    top: -1.2rem;
+    right: 5%;
+    top: 1.5rem;
   }
 
   .home__hero__mostsearch__item {
