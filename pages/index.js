@@ -136,8 +136,8 @@ export default function Home(props) {
               </div>
 
               <div className={styles.home__hero__mostsearch__container_items}>
-                {props.cats.map((cat) => (
-                  <Link href={`/cats/${cat.name}`}>
+                {props.cats.map((cat, index) => (
+                  <Link href={`/cats/${cat.name}`} key={index + 1}>
                     <a className={styles.home__hero__mostsearch__item}>
                       <img src={cat.image} alt={cat.name}></img>
                       <p>{cat.name}</p>

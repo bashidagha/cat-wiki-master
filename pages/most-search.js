@@ -20,7 +20,7 @@ const MostSearchedCats = (props) => {
 
         {props.cats &&
           props.cats.map((cat, index) => (
-            <div className={styles.most__catItem}>
+            <div className={styles.most__catItem} key={index + 1}>
               <img src={cat.image} alt={cat.name}></img>
               <div>
                 <Link href={`/cats/${cat.name}`}>
