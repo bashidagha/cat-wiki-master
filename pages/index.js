@@ -27,6 +27,14 @@ export default function Home(props) {
       } else {
         setIsMobile(false);
       }
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 700) {
+          setIsMobile(true);
+        } else {
+          setIsMobile(false);
+        }
+      });
     }
 
     // declare the data fetching function
